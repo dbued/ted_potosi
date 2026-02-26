@@ -4,41 +4,209 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TED Potosí - {% block title %}{% endblock %}</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Tu CSS personalizado -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS personalizado -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
+        html, body { height: 100%; }
+        body { display: flex; flex-direction: column; }
+        main { flex: 1 0 auto; }
+        footer { flex-shrink: 0; }
+
+        .top-bar {
+            height: 6px;
+            background: linear-gradient(to right, #D52B1E, #FFD700, #007A33);
         }
-        body {
-            display: flex;
-            flex-direction: column;
+
+        .carousel-caption {
+            bottom: 20px;
         }
-        main {
-            flex: 1 0 auto;
+
+        .carousel-caption h3 {
+            font-weight: 700;
         }
-        footer {
-            flex-shrink: 0;
+
+        .modal-content {
+            border-radius: 15px;
+        }
+
+        #contadorSlide {
+            font-size: 0.9rem;
         }
     </style>
 </head>
+
 <body>
+
+    <!-- Franja institucional -->
+    <div class="top-bar"></div>
+
+    <!-- Navbar -->
     {% include 'components/navbar.html' %}
-    
+
+    <!-- Contenido -->
     <main class="container mt-4">
         {% block content %}{% endblock %}
     </main>
 
+    <!-- Footer -->
     {% include 'components/footer.html' %}
 
+    <!-- ============================= -->
+    <!-- MODAL INSTITUCIONAL PRO -->
+    <!-- ============================= -->
+
+    <div class="modal fade" id="modalAnuncios" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content shadow-lg overflow-hidden">
+
+                <div class="modal-header text-white" style="background:#D52B1E;">
+                    <h5 class="modal-title">
+                        <i class="fas fa-bullhorn me-2"></i>
+                        Comunicados Oficiales
+                    </h5>
+
+                    <span id="contadorSlide" class="ms-auto fw-bold"></span>
+
+                    <button type="button" class="btn-close btn-close-white ms-3"
+                            data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body p-0">
+
+                    <div id="carouselAnuncios"
+                         class="carousel slide"
+                         data-bs-ride="carousel"
+                         data-bs-interval="5000">
+
+                        <div class="carousel-inner">
+
+                            <!-- SLIDE 1 -->
+                            <div class="carousel-item active">
+                                <div class="position-relative">
+                                    <div class="carousel-caption bg-dark bg-opacity-75 rounded-3 p-4">
+                                        <h3>Convocatoria Pública 2026</h3>
+                                        <p>Inscripción para jurados electorales.</p>
+                                        <a href="{{ url_for('static', filename='documentos/doc1.pdf') }}"
+                                           target="_blank"
+                                           class="btn btn-outline-light">
+                                           Descargar Documento
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SLIDE 2 -->
+                            <div class="carousel-item">
+                                <div class="position-relative">
+                                    <div class="carousel-caption bg-dark bg-opacity-75 rounded-3 p-4">
+                                        <h3>Calendario Electoral</h3>
+                                        <p>Fechas oficiales del proceso electoral.</p>
+                                        <a href="{{ url_for('static', filename='documentos/doc2.pdf') }}"
+                                           target="_blank"
+                                           class="btn btn-outline-light">
+                                           Ver Calendario
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SLIDE 3 -->
+                            <div class="carousel-item">
+                                <div class="position-relative">
+                                    <div class="carousel-caption bg-dark bg-opacity-75 rounded-3 p-4">
+                                        <h3>Calendario Electoral</h3>
+                                        <p>Fechas oficiales del proceso electoral.</p>
+                                        <a href="{{ url_for('static', filename='documentos/doc2.pdf') }}"
+                                           target="_blank"
+                                           class="btn btn-outline-light">
+                                           Ver Calendario
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Controles -->
+                        <button class="carousel-control-prev"
+                                type="button"
+                                data-bs-target="#carouselAnuncios"
+                                data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon bg-dark rounded-circle p-3"></span>
+                        </button>
+
+                        <button class="carousel-control-next"
+                                type="button"
+                                data-bs-target="#carouselAnuncios"
+                                data-bs-slide="next">
+                            <span class="carousel-control-next-icon bg-dark rounded-circle p-3"></span>
+                        </button>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer justify-content-between">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="noMostrar">
+                        <label class="form-check-label" for="noMostrar">
+                            No volver a mostrar
+                        </label>
+                    </div>
+
+                    <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                        Cerrar
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Tu JS personalizado -->
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SCRIPT FUNCIONAL COMPLETO -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            if (!localStorage.getItem("anunciosOcultos")) {
+
+                var modal = new bootstrap.Modal(document.getElementById('modalAnuncios'));
+                modal.show();
+
+                var carousel = document.getElementById('carouselAnuncios');
+                var totalSlides = document.querySelectorAll('#carouselAnuncios .carousel-item').length;
+                var contador = document.getElementById('contadorSlide');
+
+                function actualizarContador(index) {
+                    contador.textContent = (index + 1) + " de " + totalSlides;
+                }
+
+                actualizarContador(0);
+
+                carousel.addEventListener('slid.bs.carousel', function (event) {
+                    actualizarContador(event.to);
+                });
+
+                document.getElementById("noMostrar").addEventListener("change", function () {
+                    if (this.checked) {
+                        localStorage.setItem("anunciosOcultos", "true");
+                    }
+                });
+
+            }
+
+        });
+    </script>
+
 </body>
 </html>
