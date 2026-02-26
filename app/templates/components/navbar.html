@@ -1,0 +1,150 @@
+<nav
+  class="navbar navbar-expand-lg navbar-dark"
+  style="background-color: #a8a8a7">
+  <div class="container">
+    <a
+      class="navbar-brand d-flex align-items-center"
+      href="{{ url_for('web.index') }}">
+      <img
+        src="{{ url_for('static', filename='img/logo.png') }}"
+        alt="TED Potosí"
+        height="50"
+        class="me-2" />
+
+      <span class="fw-bold">TED POTOSÍ</span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link {% if request.endpoint == 'web.index' %}active{% endif %}"
+            href="{{ url_for('web.index') }}">
+            <i class="fas fa-home me-1"></i>Inicio
+          </a>
+        </li>
+        <!-- Normativa Dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="normativaDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="fas fa-gavel me-1"></i>Normativa
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="normativaDropdown">
+            <li>
+              <a
+                class="dropdown-item"
+                href="{{ url_for('web.normativa_resolucion') }}"
+                >Resolución</a
+              >
+            </li>
+            <li><a class="dropdown-item" href="#">Reglamentos</a></li>
+            <li><a class="dropdown-item" href="#">Leyes</a></li>
+          </ul>
+        </li>
+
+        <!-- Capacitación Dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="capacitacionDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="fas fa-chalkboard-teacher me-1"></i>Capacitación
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="capacitacionDropdown">
+            <li><a class="dropdown-item" href="#">Guías</a></li>
+            <li><a class="dropdown-item" href="#">Manuales</a></li>
+            <li><a class="dropdown-item" href="#">Video Tutoriales</a></li>
+          </ul>
+        </li>
+
+        <!-- Formularios Dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="formulariosDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="fas fa-file-alt me-1"></i>Formularios
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="formulariosDropdown">
+            <li><a class="dropdown-item" href="#">RRHH</a></li>
+            <li><a class="dropdown-item" href="#">Sistemas</a></li>
+            <li><a class="dropdown-item" href="#">Otros</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="sistemasDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="fas fa-external-link-alt me-1"></i>Sistemas TED
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="sistemasDropdown">
+            <li>
+              <a
+                class="dropdown-item"
+                href="https://www.oep.org.bo/"
+                target="_blank"
+                >OEP Bolivia</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="https://www.tse.gob.bo/"
+                target="_blank"
+                >TSE Bolivia</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="https://sifde.oep.org.bo/"
+                target="_blank"
+                >SIFDE</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="capacitacionDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="fas fa-contacts"></i>Social
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="capacitacionDropdown">
+            <li><a class="dropdown-item" href="#">Contactos</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,194 @@
+:root {
+    /* Colores institucionales */
+    --primary-dark: #A8A8A7;
+    --primary-light: #DADADA;
+    --accent-red: #E30613;
+    --accent-yellow: #FFCC00;
+    --accent-green: #008244;
+
+    /* Asignaciones semánticas */
+    --primary: var(--primary-dark);        /* Color principal para fondos oscuros */
+    --secondary: var(--accent-yellow);      /* Color de acento principal (puedes cambiarlo a rojo si prefieres) */
+    --text-light: #FFFFFF;
+    --text-dark: #333333;
+    --background-light: #fafafa;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--background-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background-color: var(--primary) !important;  /* Usa el color primario oscuro */
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-link {
+    color: var(--text-light) !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: color 0.2s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: var(--secondary) !important;
+}
+
+.navbar .nav-link.active {
+    border-bottom: 3px solid var(--secondary);
+    font-weight: 600;
+}
+
+.navbar-brand {
+    color: var(--text-light) !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-brand img {
+    filter: brightness(0) invert(1); /* Si el logo es oscuro, lo vuelve blanco */
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    background-color: var(--primary-light);
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.dropdown-item {
+    color: var(--text-dark);
+    transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color: var(--secondary);
+    color: var(--text-dark);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background-color: var(--primary) !important;
+    color: var(--text-light);
+}
+
+.footer a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer a:hover {
+    color: var(--secondary) !important;
+}
+
+.footer hr {
+    opacity: 0.2;
+    border-color: var(--text-light);
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-left: 5px solid var(--secondary);
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+/* ===== CARDS ===== */
+.hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+.icon-circle {
+    transition: background-color 0.3s ease;
+}
+
+.hover-card:hover .icon-circle {
+    background-color: var(--secondary) !important;
+}
+
+/* ===== BOTONES ===== */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background-color: #8f8f8f;  /* Un tono más oscuro de gris */
+    border-color: #8f8f8f;
+    color: var(--text-light);
+}
+
+.btn-outline-primary {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary);
+    color: var(--text-light);
+}
+
+/* ===== LIST GROUP ===== */
+.list-group-item {
+    transition: background-color 0.2s;
+    border: none;
+    border-bottom: 1px solid #eee;
+}
+
+.list-group-item:hover {
+    background-color: var(--primary-light);
+}
+
+.list-group-item a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.list-group-item a:hover {
+    color: var(--secondary);
+}
+
+/* ===== BADGES ===== */
+.badge-accent {
+    background-color: var(--secondary);
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.badge-red {
+    background-color: var(--accent-red);
+    color: white;
+}
+
+.badge-green {
+    background-color: var(--accent-green);
+    color: white;
+}
+
+/* ===== UTILIDADES ===== */
+.text-accent {
+    color: var(--secondary);
+}
+
+.bg-primary-light {
+    background-color: var(--primary-light);
+}
