@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block titulo %}{{ titulo }}{% endblock %}
+{% block titulo_pagina %}{{ titulo }}{% endblock %}
+
+{% block breadcrumb %}
+<li class="breadcrumb-item active">{{ titulo }}</li>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-12">
+    <div class="card card-outline" style="border-top: 3px solid #003366;">
+      <div class="card-header">
+        <h3 class="card-title"><i class="fas fa-address-book"></i> {{ titulo }}</h3>
+      </div>
+      <div class="card-body">
+        <p>Información de contacto:</p>
+        <ul class="list-group">
+          <li class="list-group-item"><i class="fas fa-phone mr-2"></i> Teléfono: (02) 1234567</li>
+          <li class="list-group-item"><i class="fas fa-envelope mr-2"></i> Email: contacto@tedpotosi.bo</li>
+          <li class="list-group-item"><i class="fas fa-map-marker-alt mr-2"></i> Dirección: Calle Ejemplo #123, Potosí</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

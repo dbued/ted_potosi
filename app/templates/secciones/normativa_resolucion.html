@@ -10,18 +10,41 @@
 {% block content %}
 <div class="row">
   <div class="col-12">
-    <div class="card">
+    <div class="card card-outline" style="border-top: 3px solid #003366;">
       <div class="card-header">
-        <h3 class="card-title">{{ titulo }}</h3>
+        <h3 class="card-title"><i class="fas fa-gavel"></i> {{ titulo }}</h3>
       </div>
       <div class="card-body">
-        <p>Contenido de {{ titulo }}. Puedes listar aquí los documentos correspondientes.</p>
-        <ul class="list-group">
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Documento ejemplo 1
-            <a href="#" class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Descargar</a>
-          </li>
-        </ul>
+        <p>Listado de resoluciones vigentes:</p>
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-12 mb-3">
+            <div class="info-box bg-light">
+              <span class="info-box-icon bg-primary"><i class="fas fa-file-pdf"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text">Resolución 001/2025</span>
+                <a href="#" class="btn btn-sm btn-outline-primary mt-2">Ver PDF</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 mb-3">
+            <div class="info-box bg-light">
+              <span class="info-box-icon bg-primary"><i class="fas fa-file-pdf"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text">Resolución 002/2025</span>
+                <a href="#" class="btn btn-sm btn-outline-primary mt-2">Ver PDF</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-12 mb-3">
+            <div class="info-box bg-light">
+              <span class="info-box-icon bg-primary"><i class="fas fa-file-pdf"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text">Resolución 003/2025</span>
+                <a href="#" class="btn btn-sm btn-outline-primary mt-2">Ver PDF</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block titulo %}{{ titulo }}{% endblock %}
+{% block titulo_pagina %}{{ titulo }}{% endblock %}
+
+{% block breadcrumb %}
+<li class="breadcrumb-item active">{{ titulo }}</li>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-12">
+    <div class="card card-outline" style="border-top: 3px solid #003366;">
+      <div class="card-header">
+        <h3 class="card-title"><i class="fas fa-file-alt"></i> {{ titulo }}</h3>
+      </div>
+      <div class="card-body">
+        <p>Otros formularios:</p>
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-12 mb-3">
+            <div class="info-box bg-light">
+              <span class="info-box-icon bg-primary"><i class="fas fa-file-pdf"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text">Formulario de solicitud</span>
+                <a href="#" class="btn btn-sm btn-outline-primary mt-2">Ver PDF</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
